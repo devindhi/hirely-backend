@@ -11,9 +11,10 @@ export async function generateRating(jobApplicationId) {
 
     const completion  = await openai.chat.completions.create({
         messages: [{ role: "user", content }],
-        model: "ft:gpt-3.5-turbo-0125:stemlink:hirely:90U7Zr3x",
+        model: "ft:gpt-3.5-turbo-0125:stemlink:hirely:92vcHB0n"
+        
     });
-
+    console.log("API response content:", completion.choices[0].message.content);
     const response = JSON.parse(completion.choices[0].message.content);
     console.log(response);
     if (!response.rate) {
