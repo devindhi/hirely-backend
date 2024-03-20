@@ -39,6 +39,7 @@ export const getJobById = async (
     if (job === null) {
       throw new NotFoundError("Job not found");
     }
+    console.log(job)
     return res.status(200).json(job);
   } catch (error) {
     next(error);

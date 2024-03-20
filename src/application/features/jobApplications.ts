@@ -10,8 +10,8 @@ export const createJobApplication = async (
 ) => {
   try {
     const jobApplication = req.body;
-    const createdJobApplication = await JobApplication.create(jobApplication);  
-    generateRating(createdJobApplication._id);
+    const createJobApplication = await JobApplication.create(jobApplication);
+    generateRating(createJobApplication._id); 
     return res.status(201).send();
   } catch (error) {
     next(error);
